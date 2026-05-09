@@ -1,6 +1,6 @@
 import { createServerFn } from "@tanstack/react-start";
 
-const REPO = "betheaakashhh/release";
+const REPO = "betheaakashhh/weddingcardmaker";
 
 export type Asset = {
   name: string;
