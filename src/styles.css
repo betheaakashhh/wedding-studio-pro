@@ -172,9 +172,10 @@ html { color-scheme: dark; background: var(--background); }
 .animate-spin-slower { animation: spin-slow 120s linear infinite reverse; }
 
 @keyframes drift-up {
-  0% { transform: translateY(20px); opacity: 0; }
-  10%, 90% { opacity: 0.5; }
-  100% { transform: translateY(-120px); opacity: 0; }
+  0% { transform: translateY(40px); opacity: 0; }
+  10% { opacity: 0.6; }
+  90% { opacity: 0.4; }
+  100% { transform: translateY(-90vh); opacity: 0; }
 }
 .animate-drift { animation: drift-up linear infinite; }
 
