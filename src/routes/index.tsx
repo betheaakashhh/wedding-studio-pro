@@ -37,7 +37,7 @@ function HomePage() {
       <FeatureShowcase />
       <WorkflowSection />
       <PreviewSection />
-      <InstallSection version={version} publishedAt={latest?.release?.published_at} />
+      <InstallSection version={version} publishedAt={latest?.release?.published_at ?? undefined} />
       <FinalCTA />
     </>
   );
