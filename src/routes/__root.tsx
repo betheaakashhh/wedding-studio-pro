@@ -50,13 +50,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Wedding Studio — Professional Wedding Card Design Software" },
+      { title: "Wedding Studio Design Software" },
       { name: "description", content: "Wedding Studio is a professional desktop design application for print studios. Multi-canvas workflow, Devanagari typography, QR generation, print-ready exports." },
       { name: "author", content: "AetherSolve Pvt Ltd" },
-      { property: "og:title", content: "Wedding Studio — Design software for print studios" },
-      { property: "og:description", content: "Professional desktop application for designing wedding cards and invitations." },
+      { property: "og:title", content: "Wedding Studio Design Software" },
+      { property: "og:description", content: "Wedding Studio is a professional desktop design application for print studios. Multi-canvas workflow, Devanagari typography, QR generation, print-ready exports." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Wedding Studio Design Software" },
+      { name: "twitter:description", content: "Wedding Studio is a professional desktop design application for print studios. Multi-canvas workflow, Devanagari typography, QR generation, print-ready exports." },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/683e66b9-4c38-438f-8d47-4ba20809d6ee" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/683e66b9-4c38-438f-8d47-4ba20809d6ee" },
     ],
     links: [{ rel: "stylesheet", href: appCss }],
   }),
@@ -82,9 +86,9 @@ function RootComponent() {
   const { queryClient } = Route.useRouteContext();
   return (
     <QueryClientProvider client={queryClient}>
-      <div className="min-h-screen flex flex-col bg-background text-foreground overflow-x-clip">
+      <div className="min-h-screen flex flex-col bg-background text-foreground">
         <Navbar />
-        <main className="flex-1 overflow-x-clip"><Outlet /></main>
+        <main className="flex-1"><Outlet /></main>
         <Footer />
       </div>
     </QueryClientProvider>
