@@ -116,6 +116,7 @@ html { color-scheme: dark; background: var(--background); }
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+    overflow-x: hidden;
   }
   ::selection { background: oklch(0.78 0.12 85 / 35%); color: white; }
   h1, h2, h3, h4 { letter-spacing: -0.02em; }
