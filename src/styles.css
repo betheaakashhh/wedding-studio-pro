@@ -118,19 +118,19 @@ html { color-scheme: dark; background: var(--background); }
     text-rendering: optimizeLegibility;
     overflow-x: hidden;
   }
-  ::selection { background: oklch(0.78 0.12 85 / 35%); color: white; }
+  ::selection { background: oklch(0.74 0.17 45 / 35%); color: white; }
   h1, h2, h3, h4 { letter-spacing: -0.02em; }
 }
 
 @layer utilities {
   .glass {
     background: color-mix(in oklab, var(--surface) 70%, transparent);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(14px) saturate(140%);
+    -webkit-backdrop-filter: blur(14px) saturate(140%);
     border: 1px solid color-mix(in oklab, white 8%, transparent);
   }
   .gradient-text {
-    background: linear-gradient(135deg, oklch(0.92 0.1 85), oklch(0.78 0.12 85) 50%, oklch(0.6 0.13 25));
+    background: linear-gradient(120deg, oklch(0.92 0.12 50), oklch(0.74 0.17 45) 45%, oklch(0.55 0.22 5));
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -142,17 +142,18 @@ html { color-scheme: dark; background: var(--background); }
     background-size: 48px 48px;
   }
   .radial-spot {
-    background: radial-gradient(circle at 50% 0%, oklch(0.78 0.12 85 / 0.18), transparent 60%);
+    background: radial-gradient(circle at 50% 0%, oklch(0.74 0.17 45 / 0.2), transparent 60%);
   }
   .hover-lift { transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease; }
-  .hover-lift:hover { transform: translateY(-3px); border-color: oklch(0.78 0.12 85 / 40%); }
+  .hover-lift:hover { transform: translateY(-3px); border-color: oklch(0.74 0.17 45 / 40%); }
   .scrollbar-thin::-webkit-scrollbar { width: 8px; height: 8px; }
   .scrollbar-thin::-webkit-scrollbar-thumb { background: oklch(1 0 0 / 0.1); border-radius: 8px; }
+  .font-devanagari { font-family: "Noto Serif Devanagari", "Noto Sans Devanagari", serif; }
 }
 
 @keyframes float-y {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+  50% { transform: translateY(-14px); }
 }
 .animate-float { animation: float-y 6s ease-in-out infinite; }
 
@@ -165,3 +166,15 @@ html { color-scheme: dark; background: var(--background); }
   background-size: 200% 100%;
   animation: shimmer 3s linear infinite;
 }
+
+@keyframes spin-slow { to { transform: rotate(360deg); } }
+.animate-spin-slow { animation: spin-slow 60s linear infinite; }
+.animate-spin-slower { animation: spin-slow 120s linear infinite reverse; }
+
+@keyframes drift-up {
+  0% { transform: translateY(20px); opacity: 0; }
+  10%, 90% { opacity: 0.5; }
+  100% { transform: translateY(-120px); opacity: 0; }
+}
+.animate-drift { animation: drift-up linear infinite; }
+
