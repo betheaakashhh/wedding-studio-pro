@@ -55,8 +55,8 @@ function DownloadPage() {
       description="Always up to date — fetched live from the latest GitHub release."
     >
       {isLoading && (
-        <div className="rounded-xl border border-border/70 bg-surface/60 p-10 text-center text-muted-foreground">
-          Loading latest release…
+        <div className="rounded-xl border border-border/70 bg-surface/60 p-10 flex items-center justify-center">
+          <WeddingLoader size={72} label="Loading latest release" />
         </div>
       )}
 
