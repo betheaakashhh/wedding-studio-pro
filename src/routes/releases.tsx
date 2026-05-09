@@ -4,6 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 import { useMemo, useState } from "react";
 import { Search, Tag, Calendar, Download, ChevronRight } from "lucide-react";
 import { Section } from "@/components/site/Section";
+import { WeddingLoader } from "@/components/site/WeddingLoader";
 import { getAllReleases, type Release } from "@/lib/github.functions";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
@@ -75,7 +76,11 @@ function ReleasesPage() {
         </aside>
 
         <div className="min-w-0">
-          {isLoading && <div className="text-muted-foreground text-sm">Loading releases…</div>}
+          {isLoading && (
+            <div className="flex justify-center py-10">
+              <WeddingLoader size={64} label="Loading releases" />
+            </div>
+          )}
           {data?.error && <div className="text-destructive text-sm">{data.error}</div>}
 
           <div className="space-y-6 relative">
