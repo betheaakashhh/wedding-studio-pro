@@ -53,39 +53,10 @@ function Hero({ version, stars }: { version: string; stars?: number }) {
   const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
   const scale = useTransform(scrollYProgress, [0, 1], [1, 0.94]);
 
-  // cursor-tracked spotlight
-  const mx = useMotionValue(50);
-  const my = useMotionValue(20);
-  const sx = useSpring(mx, { stiffness: 60, damping: 20 });
-  const sy = useSpring(my, { stiffness: 60, damping: 20 });
-
-  useEffect(() => {
-    const onMove = (e: MouseEvent) => {
-      const el = ref.current;
-      if (!el) return;
-      const r = el.getBoundingClientRect();
-      mx.set(((e.clientX - r.left) / r.width) * 100);
-      my.set(((e.clientY - r.top) / r.height) * 100);
-    };
-    window.addEventListener("mousemove", onMove);
-    return () => window.removeEventListener("mousemove", onMove);
-  }, [mx, my]);
-
   return (
     <section ref={ref} className="relative overflow-hidden border-b border-border/50">
-      {/* layered backgrounds */}
-      <div className="absolute inset-0 grid-bg opacity-[0.35] pointer-events-none" />
-      <motion.div
-        style={{
-          background: useTransform(
-            [sx, sy] as unknown as never,
-            ([x, y]: number[]) =>
-              `radial-gradient(600px circle at ${x}% ${y}%, oklch(0.78 0.12 85 / 0.18), transparent 55%)`,
-          ),
-        }}
-        className="absolute inset-0 pointer-events-none"
-      />
-      <div className="absolute -top-40 left-1/2 -translate-x-1/2 h-[640px] w-[1100px] bg-gradient-to-b from-primary/15 via-maroon/5 to-transparent rounded-full blur-3xl pointer-events-none" />
+      {/* Hindu wedding artifacts background */}
+      <BackgroundArtifacts />
       <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-background to-transparent pointer-events-none" />
 
       <motion.div
