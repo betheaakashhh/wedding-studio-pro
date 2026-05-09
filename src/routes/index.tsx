@@ -46,7 +46,7 @@ function HomePage() {
                 Latest stable {version}
               </span>
               <a
-                href="https://github.com/betheaakashhh/release"
+                href="https://github.com/betheaakashhh/weddingcardmaker"
                 target="_blank" rel="noreferrer"
                 className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full border border-border/80 bg-surface/60 text-[11px] text-muted-foreground hover:text-foreground transition-colors"
               >
@@ -144,7 +144,7 @@ function HomePage() {
             </div>
             <pre className="font-mono text-sm text-foreground/90 bg-background/60 rounded-md p-4 border border-border/60 overflow-x-auto">
 {`# 1. Download the latest installer
-Start-Process "https://github.com/betheaakashhh/release/releases/latest"
+Start-Process "https://github.com/betheaakashhh/weddingcardmaker/releases/latest"
 
 # 2. Run WeddingStudio-Setup.exe
 # 3. Launch and create your first canvas`}
@@ -167,7 +167,7 @@ Start-Process "https://github.com/betheaakashhh/release/releases/latest"
               <Link to="/download" className="inline-flex items-center gap-1.5 rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90">
                 <Download className="h-3.5 w-3.5" /> Download
               </Link>
-              <a href="https://github.com/betheaakashhh/release" target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 rounded-md border border-border/80 bg-surface px-4 py-2 text-sm hover:bg-surface-2">
+              <a href="https://github.com/betheaakashhh/weddingcardmaker" target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 rounded-md border border-border/80 bg-surface px-4 py-2 text-sm hover:bg-surface-2">
                 <Github className="h-3.5 w-3.5" /> View on GitHub
               </a>
             </div>

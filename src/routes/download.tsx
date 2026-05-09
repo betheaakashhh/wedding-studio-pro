@@ -63,7 +63,7 @@ function DownloadPage() {
       {!isLoading && data?.error && (
         <div className="rounded-xl border border-destructive/40 bg-destructive/5 p-6 text-sm text-destructive">
           Couldn't load the latest release ({data.error}).{" "}
-          <a href="https://github.com/betheaakashhh/release/releases" className="underline" target="_blank" rel="noreferrer">
+          <a href="https://github.com/betheaakashhh/weddingcardmaker/releases" className="underline" target="_blank" rel="noreferrer">
             View on GitHub
           </a>
         </div>
@@ -171,7 +171,7 @@ function DownloadPage() {
             <div className="text-xs text-muted-foreground">This page fetches the latest release directly from GitHub Releases.</div>
           </div>
         </div>
-        <a href="https://github.com/betheaakashhh/release/releases" target="_blank" rel="noreferrer"
+        <a href="https://github.com/betheaakashhh/weddingcardmaker/releases" target="_blank" rel="noreferrer"
           className="text-xs text-primary hover:underline inline-flex items-center gap-1">
           Browse all releases <ExternalLink className="h-3 w-3" />
         </a>

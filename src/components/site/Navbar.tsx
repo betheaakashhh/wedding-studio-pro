@@ -46,7 +46,7 @@ export function Navbar() {
 
         <div className="hidden md:flex items-center gap-2">
           <a
-            href="https://github.com/betheaakashhh/release"
+            href="https://github.com/betheaakashhh/weddingcardmaker"
             target="_blank" rel="noreferrer"
             className="p-2 rounded-md text-muted-foreground hover:text-foreground hover:bg-surface transition-colors"
             aria-label="GitHub"

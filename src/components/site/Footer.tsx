@@ -24,7 +24,7 @@ const cols = [
     title: "Company",
     links: [
       { label: "AetherSolve", href: "https://aethersolve.vercel.app" },
-      { label: "GitHub", href: "https://github.com/betheaakashhh/release" },
+      { label: "GitHub", href: "https://github.com/betheaakashhh/weddingcardmaker" },
     ],
   },
 ];
@@ -75,7 +75,7 @@ export function Footer() {
           <div className="flex items-center gap-4 text-xs text-muted-foreground">
             <Link to="/privacy" className="hover:text-foreground">Privacy</Link>
             <Link to="/terms" className="hover:text-foreground">Terms</Link>
-            <a href="https://github.com/betheaakashhh/release" target="_blank" rel="noreferrer" className="hover:text-foreground inline-flex items-center gap-1.5">
+            <a href="https://github.com/betheaakashhh/weddingcardmaker" target="_blank" rel="noreferrer" className="hover:text-foreground inline-flex items-center gap-1.5">
               <Github className="h-3.5 w-3.5" /> GitHub
             </a>
           </div>

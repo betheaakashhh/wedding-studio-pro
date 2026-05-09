@@ -15,10 +15,10 @@ export const Route = createFileRoute("/community")({
 });
 
 const cards = [
-  { icon: Github, title: "GitHub Repository", desc: "Source releases, issues and discussions.", href: "https://github.com/betheaakashhh/release", cta: "Open repo" },
-  { icon: Bug, title: "Issue Tracker", desc: "Report bugs and follow ongoing fixes.", href: "https://github.com/betheaakashhh/release/issues", cta: "Report a bug" },
-  { icon: Lightbulb, title: "Feature Requests", desc: "Suggest features and vote on the roadmap.", href: "https://github.com/betheaakashhh/release/issues/new?labels=enhancement", cta: "Request a feature" },
-  { icon: MessageCircle, title: "Discussions", desc: "Tips, templates and studio workflows.", href: "https://github.com/betheaakashhh/release/discussions", cta: "Join discussion" },
+  { icon: Github, title: "GitHub Repository", desc: "Source releases, issues and discussions.", href: "https://github.com/betheaakashhh/weddingcardmaker", cta: "Open repo" },
+  { icon: Bug, title: "Issue Tracker", desc: "Report bugs and follow ongoing fixes.", href: "https://github.com/betheaakashhh/weddingcardmaker/issues", cta: "Report a bug" },
+  { icon: Lightbulb, title: "Feature Requests", desc: "Suggest features and vote on the roadmap.", href: "https://github.com/betheaakashhh/weddingcardmaker/issues/new?labels=enhancement", cta: "Request a feature" },
+  { icon: MessageCircle, title: "Discussions", desc: "Tips, templates and studio workflows.", href: "https://github.com/betheaakashhh/weddingcardmaker/discussions", cta: "Join discussion" },
   { icon: Users, title: "Discord", desc: "Real-time community chat (coming soon).", href: "#", cta: "Join Discord" },
 ];
 
