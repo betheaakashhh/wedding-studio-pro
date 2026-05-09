@@ -8,6 +8,7 @@ import {
   Cpu, Zap, Shield, Layers, Type, Palette, ArrowUpRight, Command, Sparkles,
 } from "lucide-react";
 import { AppMockup } from "@/components/site/AppMockup";
+import { BackgroundArtifacts } from "@/components/site/BackgroundArtifacts";
 import { Section } from "@/components/site/Section";
 import { getLatestRelease, getRepoStats } from "@/lib/github.functions";
 
