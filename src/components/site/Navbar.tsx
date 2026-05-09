@@ -12,6 +12,62 @@ const nav = [
   { to: "/community", label: "Community" },
 ];
 
+function GallopingHorse() {
+  return (
+    <div className="pointer-events-none absolute inset-0 overflow-hidden">
+      {/* dust trail */}
+      <motion.div
+        aria-hidden
+        initial={{ x: "-10%" }}
+        animate={{ x: "110%" }}
+        transition={{ duration: 14, repeat: Infinity, ease: "linear", delay: 0.2 }}
+        className="absolute top-1/2 -translate-y-1/2 h-[2px] w-40 bg-gradient-to-r from-transparent via-primary/40 to-transparent blur-[2px]"
+      />
+      {/* horse */}
+      <motion.div
+        initial={{ x: "-15%" }}
+        animate={{ x: "115%" }}
+        transition={{ duration: 14, repeat: Infinity, ease: "linear" }}
+        className="absolute top-1/2 -translate-y-1/2"
+      >
+        <motion.div
+          animate={{ y: [0, -2, 0, -1, 0] }}
+          transition={{ duration: 0.45, repeat: Infinity, ease: "easeInOut" }}
+        >
+          <svg
+            width="46"
+            height="32"
+            viewBox="0 0 120 80"
+            fill="none"
+            className="text-primary/55 drop-shadow-[0_0_8px_color-mix(in_oklab,var(--primary)_45%,transparent)]"
+          >
+            {/* stylized galloping horse silhouette */}
+            <path
+              fill="currentColor"
+              d="M8 58c4-2 9-3 14-2l6-3c2-6 6-11 12-14l-2-6 5 1 2 4c5-1 10-1 15 1l8-10c2-2 5-3 8-2 2 1 3 3 2 5l-3 6 10 4c4 2 7 5 9 9l8 2c3 1 5 3 5 6 0 2-2 4-4 4l-9-1-3 6-7-2-2 6h-5l-3-7-10 1-2 7h-5l-1-7-12-1-3 7h-5l-1-7-9-2-4 6H9c-2 0-3-1-3-3 0-2 1-3 2-4z"
+            />
+            {/* mane flutter */}
+            <path
+              fill="currentColor"
+              opacity="0.7"
+              d="M70 22l-6 6 4 1-3 5 5-1-1 4 4-2 1-6z"
+            />
+            {/* tail */}
+            <path
+              fill="currentColor"
+              opacity="0.65"
+              d="M8 50c-4 1-7 4-8 8l5-1-3 5 6-2-1 4 5-3 2-7z"
+            />
+            {/* small wedding plume on head */}
+            <circle cx="92" cy="14" r="2" fill="currentColor" opacity="0.9" />
+            <circle cx="95" cy="10" r="1.5" fill="currentColor" opacity="0.7" />
+          </svg>
+        </motion.div>
+      </motion.div>
+    </div>
+  );
+}
+
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
@@ -25,7 +81,6 @@ export function Navbar() {
   const { scrollY } = useScroll();
   useMotionValueEvent(scrollY, "change", (v) => setScrolled(v > 8));
 
-  // Compute indicator position from hover or active route
   useEffect(() => {
     const target =
       hoverIdx !== null
@@ -48,7 +103,6 @@ export function Navbar() {
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
       className="sticky top-0 z-50"
     >
-      {/* shimmering top hairline */}
       <div className="h-px w-full bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
 
       <motion.div
@@ -58,13 +112,15 @@ export function Navbar() {
           borderColor: scrolled ? "color-mix(in oklab, white 8%, transparent)" : "rgba(0,0,0,0)",
         }}
         transition={{ duration: 0.3 }}
-        className="border-b"
+        className="relative border-b"
       >
-        <div className="mx-auto max-w-7xl px-5 sm:px-8 h-16 flex items-center justify-between">
-          {/* Logo with subtle motion */}
+        {/* decorative galloping wedding horse */}
+        <GallopingHorse />
+
+        <div className="relative mx-auto max-w-7xl px-5 sm:px-8 h-16 flex items-center justify-between">
           <Link to="/" className="group flex items-center gap-2">
             <motion.span
-              whileHover={{ rotate: 12, scale: 1.08 }}
+              whileHover={{ rotate: 6, scale: 1.05 }}
               transition={{ type: "spring", stiffness: 300, damping: 14 }}
               className="inline-flex"
             >
@@ -72,7 +128,6 @@ export function Navbar() {
             </motion.span>
           </Link>
 
-          {/* Desktop nav with animated indicator */}
           <nav
             ref={navRef}
             onMouseLeave={() => setHoverIdx(null)}
