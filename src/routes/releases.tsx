@@ -4,6 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 import { useMemo, useState } from "react";
 import { Search, Tag, Calendar, Download, ChevronRight } from "lucide-react";
 import { Section } from "@/components/site/Section";
+import { WeddingLoader } from "@/components/site/WeddingLoader";
 import { getAllReleases, type Release } from "@/lib/github.functions";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
